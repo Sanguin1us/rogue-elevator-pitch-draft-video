@@ -1,0 +1,14 @@
+{
+  "name": "rogue-elevator-pitch-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "stills": "node render.mjs stills",
+    "render": "node render.mjs video",
+    "audio": "python audio.py",
+    "mux": "ffmpeg -y -i rogue-pitch-silent.mp4 -i soundtrack.wav -c:v copy -c:a aac -b:a 256k -shortest rogue-pitch.mp4"
+  },
+  "dependencies": {
+    "playwright-core": "1.63.0"
+  }
+}
